@@ -1,0 +1,21 @@
+ai-skills-python
+================
+
+This repository combines and adapts material from multiple MIT-licensed sources.
+
+Quality skills (try-except, tighten-types, contract-docstrings, hypothesis-tests,
+mutation-testing, pre-mortem, stub-package, conceptual-analysis, alignment-chart)
+and `skills/stub-package/scripts/stub_package.py` are derived from:
+
+  Copyright (c) 2026 Matthew Honnibal
+  https://github.com/ (original local tree: claude-skills-python)
+  License: MIT — see LICENSE
+
+PEP 8 skills (pep8-*) are derived from:
+
+  Copyright (c) 2026 Leonardo Gallego
+  Original local tree: claude-skills-python-pep8
+  License: MIT — see LICENSE
+
+Adaptations for agentskills.io / Lola packaging (frontmatter normalization,
+layout, docs) by Leonardo Gallego.

@@ -1,0 +1,8 @@
+{
+  "name": "ai-skills-python",
+  "version": "1.0.0",
+  "description": "Python agent skills: PEP 8 style review plus quality workflows (types, try/except, Hypothesis, mutation testing, pre-mortem). Agentskills.io format; installable via Lola or Cursor skills.",
+  "author": {
+    "name": "Leonardo Gallego"
+  }
+}

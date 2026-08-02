@@ -43,7 +43,8 @@ Migrated content lives under `skills/` in this repo.
 - [x] `scripts/install-cursor.sh` symlink helper
 - [x] Symlink into `~/.cursor/skills/` via `scripts/install-cursor.sh` (19 skills)
 - [x] Initial git commit + GitHub remote (`leogallego/ai-skills-python`)
-- [ ] Later: archive/redirect old source repos, optional lola-market entry
+- [ ] Later: archive/redirect old source repos
+- [ ] Later: publish to a Lola marketplace catalog ([#1](https://github.com/leogallego/ai-skills-python/issues/1))
 - [ ] After remote is solid: replace local old checkouts and verify install paths
 
 ## Frontmatter contract

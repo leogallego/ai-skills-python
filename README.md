@@ -17,7 +17,9 @@ See [AGENTS.md](AGENTS.md) for migration status and work remaining for contribut
 
 ---
 
-## Layout (Lola module + agentskills.io)
+## Layout (Lola skill pack + agentskills.io)
+
+This repo is a Lola **Skill Pack**: `skills/` at the repository root (Lola also supports a nested `module/` layout; we use the root form).
 
 ```text
 ai-skills-python/
@@ -48,21 +50,32 @@ Claude-only frontmatter (`argument-hint`, `user-invocable`, `disable-model-invoc
 
 ### Option A — Lola (multi-assistant)
 
+[Lola](https://github.com/LobsterTrap/lola) distributes Agent Skills / skill packs across assistants. Install Lola from the current upstream:
+
 ```bash
-uv tool install lola-ai
+# Recommended
+uv tool install git+https://github.com/LobsterTrap/lola
 
-# From a local checkout
-lola mod add /home/lgallego/Claude/ai-skills-python
-lola install ai-skills-python --scope user
-# or project scope:
-# lola install ai-skills-python
+# Or clone and install locally
+# git clone https://github.com/LobsterTrap/lola && cd lola && uv tool install .
 ```
-
-Optional: publish later via [lola-market](https://github.com/RedHatProductSecurity/lola-market).
 
 Docs: https://lobstertrap.org/lola/
 
-**Note:** On Cursor, Lola may install as `.cursor/rules/*.mdc` (and keep sources under `.lola/modules/`), which is not the same as native Agent Skills under `~/.cursor/skills/`. Use Option B if you want Cursor’s skill loader.
+Then register and install this pack (local checkout or git URL):
+
+```bash
+# Local checkout
+lola mod add /path/to/ai-skills-python
+# Or from GitHub
+# lola mod add https://github.com/leogallego/ai-skills-python.git
+
+lola install ai-skills-python --scope user
+# Project scope instead:
+# lola install ai-skills-python
+```
+
+**Note:** On Cursor, Lola may install as `.cursor/rules/*.mdc` (sources under `.lola/modules/`), which is not the same as native Agent Skills under `~/.cursor/skills/`. Use Option B if you want Cursor’s skill loader.
 
 ### Option B — Native Cursor Agent Skills
 
@@ -80,7 +93,8 @@ Start a new chat so Cursor picks up the skills.
 ### Option C — Claude Code plugin
 
 ```bash
-claude plugin add /home/lgallego/Claude/ai-skills-python
+claude plugin add /path/to/ai-skills-python
+# or: claude plugin add https://github.com/leogallego/ai-skills-python
 ```
 
 ---
@@ -140,7 +154,7 @@ echo "OK: name matches directory for all skills"
 ## Related
 
 - Spec: https://agentskills.io/specification  
-- Lola: https://github.com/LobsterTrap/lola  
+- Lola: https://github.com/LobsterTrap/lola · docs: https://lobstertrap.org/lola/  
 - ansible-know review note (local): `~/Claude/ansible-knowledge-mcp/docs/research/codebase-review-2026-07-31.md` (gitignored there)
 
 ## License
